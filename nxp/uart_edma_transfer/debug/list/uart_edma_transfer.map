@@ -1,0 +1,614 @@
+###############################################################################
+#
+# IAR ELF Linker V7.80.2.11947/W32 for ARM                25/Jul/2019  10:45:34
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        F:\work_backup\test\uart_edma_transfer\debug\uart_edma_transfer.out
+#    Map file     =  
+#        F:\work_backup\test\uart_edma_transfer\debug\list\uart_edma_transfer.map
+#    Command line =  
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\board.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\clock_config.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_assert.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_clock.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_common.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_debug_console.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_dmamux.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_edma.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_ftfx_cache.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_ftfx_controller.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_ftfx_flash.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_ftfx_flexnvm.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_gpio.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_smc.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_str.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_uart.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\fsl_uart_edma.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\generic_list.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\pin_mux.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\serial_manager.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\serial_port_uart.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\startup_MK64F12.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\system_MK64F12.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\uart_adapter.o
+#        F:\work_backup\test\uart_edma_transfer\debug\obj\uart_edma_transfer.o
+#        --redirect _Printf=_PrintfSmall --redirect _Scanf=_ScanfSmall -o
+#        F:\work_backup\test\uart_edma_transfer\debug\uart_edma_transfer.out
+#        --map
+#        F:\work_backup\test\uart_edma_transfer\debug\list\uart_edma_transfer.map
+#        --config
+#        F:\work_backup\test\uart_edma_transfer/MK64FN1M0xxx12_flash.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000400 to 0x0000040f] { section FlashConfig };
+"P2":  place in [from 0x00000000 to 0x000003ff] |
+                [from 0x00000410 to 0x000fffff] { ro };
+"P3":  place in [from 0x1fff0000 to 0x1fffffff] |
+                [from 0x20000000 to 0x2002fbff] { block RW };
+"P4":  place in [from 0x1fff0000 to 0x1fffffff] |
+                [from 0x20000000 to 0x2002fbff] { block ZI };
+"P6":  place in [from 0x2002fc00 to 0x2002ffff] { block CSTACK };
+initialize by copy { rw, section .textrw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                      0x400
+  .intvec            ro code  0x00000000   0x400  startup_MK64F12.o [1]
+                            - 0x00000400   0x400
+
+"P1":                                       0x10
+  FlashConfig        ro code  0x00000400    0x10  startup_MK64F12.o [1]
+                            - 0x00000410    0x10
+
+"P2":                                     0x3238
+  .text              ro code  0x00000410   0xbdc  fsl_edma.o [1]
+  .text              ro code  0x00000fec    0x1c  fsl_assert.o [1]
+  .text              ro code  0x00001008    0x66  ABImemset.o [5]
+  .rodata            const    0x0000106e     0x2  uart_edma_transfer.o [1]
+  .text              ro code  0x00001070    0xd8  fsl_debug_console.o [1]
+  .text              ro code  0x00001148    0xcc  serial_manager.o [1]
+  .text              ro code  0x00001214     0x6  ABImemclr4.o [5]
+  .text              ro code  0x0000121a   0x320  fsl_str.o [1]
+  .text              ro code  0x0000153a     0x2  startup_MK64F12.o [1]
+  .text              ro code  0x0000153c    0x64  serial_port_uart.o [1]
+  .text              ro code  0x000015a0    0x32  ABImemset48.o [5]
+  .text              ro code  0x000015d2     0x2  startup_MK64F12.o [1]
+  .text              ro code  0x000015d4    0x36  strlen.o [5]
+  .text              ro code  0x0000160a     0x2  startup_MK64F12.o [1]
+  .text              ro code  0x0000160c    0x70  uart_adapter.o [1]
+  .text              ro code  0x0000167c   0x45c  fsl_uart.o [1]
+  .text              ro code  0x00001ad8   0x7b8  fsl_clock.o [1]
+  .text              ro code  0x00002290   0x464  fsl_uart_edma.o [1]
+  .text              ro code  0x000026f4   0x2a8  uart_edma_transfer.o [1]
+  .text              ro code  0x0000299c    0x68  pin_mux.o [1]
+  .text              ro code  0x00002a04    0x90  clock_config.o [1]
+  .text              ro code  0x00002a94    0x6c  fsl_dmamux.o [1]
+  .text              ro code  0x00002b00    0x76  ABImemcpy_unaligned.o [5]
+  .text              ro code  0x00002b76     0x2  startup_MK64F12.o [1]
+  .rodata            const    0x00002b78    0x68  fsl_edma.o [1]
+  .rodata            const    0x00002be0    0x64  fsl_edma.o [1]
+  Initializer bytes  const    0x00002c44    0x58  <for RW-1>
+  .text              ro code  0x00002c9c     0x2  startup_MK64F12.o [1]
+  .rodata            const    0x00002ca0    0x54  serial_manager.o [1]
+  .rodata            const    0x00002cf4    0x54  serial_port_uart.o [1]
+  .rodata            const    0x00002d48    0x48  fsl_debug_console.o [1]
+  .rodata            const    0x00002d90    0x48  uart_adapter.o [1]
+  .rodata            const    0x00002dd8    0x40  fsl_uart.o [1]
+  .rodata            const    0x00002e18    0x40  fsl_uart.o [1]
+  .rodata            const    0x00002e58    0x40  fsl_uart_edma.o [1]
+  .text              ro code  0x00002e98    0x40  zero_init3.o [5]
+  .rodata            const    0x00002ed8    0x3c  fsl_clock.o [1]
+  .rodata            const    0x00002f14    0x3c  fsl_dmamux.o [1]
+  .rodata            const    0x00002f50    0x3c  fsl_edma.o [1]
+  .rodata            const    0x00002f8c    0x3c  fsl_uart.o [1]
+  .rodata            const    0x00002fc8    0x3c  uart_edma_transfer.o [1]
+  .text              ro code  0x00003004    0x3a  system_MK64F12.o [1]
+  .text              ro code  0x0000303e     0x2  startup_MK64F12.o [1]
+  .rodata            const    0x00003040    0x2c  fsl_assert.o [1]
+  .rodata            const    0x0000306c    0x2c  fsl_edma.o [1]
+  .rodata            const    0x00003098    0x2c  uart_edma_transfer.o [1]
+  .text              ro code  0x000030c4    0x2c  copy_init3.o [5]
+  .rodata            const    0x000030f0    0x28  fsl_dmamux.o [1]
+  .rodata            const    0x00003118    0x28  fsl_edma.o [1]
+  .text              ro code  0x00003140    0x28  startup_MK64F12.o [1]
+  .text              ro code  0x00003168    0x28  data_init.o [5]
+  .rodata            const    0x00003190    0x24  fsl_edma.o [1]
+  .rodata            const    0x000031b4    0x24  fsl_edma.o [1]
+  .text              ro code  0x000031d8    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x000031fc    0x24  - Linker created -
+  .text              ro code  0x00003220     0x2  startup_MK64F12.o [1]
+  .rodata            const    0x00003224    0x20  fsl_edma.o [1]
+  .rodata            const    0x00003244    0x1c  fsl_uart.o [1]
+  .text              ro code  0x00003260    0x1a  cmain.o [5]
+  .text              ro code  0x0000327a     0x4  low_level_init.o [3]
+  .text              ro code  0x0000327e     0x4  exit.o [3]
+  .text              ro code  0x00003282     0x2  startup_MK64F12.o [1]
+  .text              ro code  0x00003284     0xa  cexit.o [5]
+  .text              ro code  0x0000328e     0x2  startup_MK64F12.o [1]
+  .text              ro code  0x00003290    0x14  exit.o [6]
+  .rodata            const    0x000032a4    0x18  fsl_uart.o [1]
+  .rodata            const    0x000032bc    0x18  fsl_uart.o [1]
+  .rodata            const    0x000032d4    0x18  fsl_uart.o [1]
+  .rodata            const    0x000032ec    0x18  fsl_uart_edma.o [1]
+  .rodata            const    0x00003304    0x18  fsl_uart_edma.o [1]
+  .rodata            const    0x0000331c    0x18  uart_adapter.o [1]
+  .rodata            const    0x00003334    0x14  fsl_edma.o [1]
+  .rodata            const    0x00003348    0x10  fsl_clock.o [1]
+  .rodata            const    0x00003358    0x10  fsl_clock.o [1]
+  .rodata            const    0x00003368    0x10  fsl_edma.o [1]
+  .rodata            const    0x00003378    0x10  fsl_edma.o [1]
+  .rodata            const    0x00003388    0x10  fsl_edma.o [1]
+  .rodata            const    0x00003398    0x10  fsl_edma.o [1]
+  .rodata            const    0x000033a8    0x10  fsl_uart_edma.o [1]
+  .rodata            const    0x000033b8    0x10  serial_port_uart.o [1]
+  .rodata            const    0x000033c8     0xc  clock_config.o [1]
+  .rodata            const    0x000033d4     0xc  fsl_clock.o [1]
+  .rodata            const    0x000033e0     0xc  fsl_clock.o [1]
+  .rodata            const    0x000033ec     0xc  fsl_debug_console.o [1]
+  .rodata            const    0x000033f8     0xc  fsl_debug_console.o [1]
+  .rodata            const    0x00003404     0xc  fsl_edma.o [1]
+  .rodata            const    0x00003410     0xc  fsl_uart_edma.o [1]
+  .rodata            const    0x0000341c     0xc  serial_manager.o [1]
+  .text              ro code  0x00003428     0xc  cstartup_M.o [5]
+  .rodata            const    0x00003434     0x8  clock_config.o [1]
+  .rodata            const    0x0000343c     0x8  clock_config.o [1]
+  .rodata            const    0x00003444     0x8  fsl_clock.o [1]
+  .rodata            const    0x0000344c     0x8  fsl_uart.o [1]
+  .rodata            const    0x00003454     0x8  fsl_uart_edma.o [1]
+  .rodata            const    0x0000345c     0x8  fsl_uart_edma.o [1]
+  .rodata            const    0x00003464     0x8  fsl_uart_edma.o [1]
+  .rodata            const    0x0000346c     0x8  fsl_uart_edma.o [1]
+  .rodata            const    0x00003474     0x8  serial_manager.o [1]
+  .rodata            const    0x0000347c     0x8  serial_manager.o [1]
+  .rodata            const    0x00003484     0x8  serial_manager.o [1]
+  .rodata            const    0x0000348c     0x8  serial_port_uart.o [1]
+  .rodata            const    0x00003494     0x8  serial_port_uart.o [1]
+  .rodata            const    0x0000349c     0x8  uart_adapter.o [1]
+  .rodata            const    0x000034a4     0x8  uart_adapter.o [1]
+  .rodata            const    0x000034ac     0x8  uart_adapter.o [1]
+  .text              ro code  0x000034b4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034bc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034c4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034cc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034d4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034dc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034e4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034ec     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034f4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000034fc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003504     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000350c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003514     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000351c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003524     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000352c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003534     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000353c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003544     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000354c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003554     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000355c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003564     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000356c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003574     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000357c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003584     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000358c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003594     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000359c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035a4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035ac     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035b4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035bc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035c4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035cc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035d4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035dc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035e4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035ec     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035f4     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x000035fc     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003604     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000360c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003614     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000361c     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x00003624     0x8  startup_MK64F12.o [1]
+  .text              ro code  0x0000362c     0x8  startup_MK64F12.o [1]
+  .rodata            const    0x00003634     0x4  fsl_dmamux.o [1]
+  .rodata            const    0x00003638     0x4  fsl_dmamux.o [1]
+  .rodata            const    0x0000363c     0x4  fsl_edma.o [1]
+  .rodata            const    0x00003640     0x4  fsl_edma.o [1]
+  .text              ro code  0x00003644     0x4  startup_MK64F12.o [1]
+  .rodata            const    0x00003648     0x0  zero_init3.o [5]
+  .rodata            const    0x00003648     0x0  copy_init3.o [5]
+                            - 0x00003648  0x3238
+
+"P3-P4", part 1 of 2:                       0x58
+  RW                          0x1fff0000    0x58  <Block>
+    RW-1                      0x1fff0000    0x55  <Init block>
+      .data          inited   0x1fff0000     0x4  fsl_clock.o [1]
+      .data          inited   0x1fff0004     0x4  fsl_clock.o [1]
+      .data          inited   0x1fff0008     0x4  system_MK64F12.o [1]
+      .data          inited   0x1fff000c    0x48  uart_edma_transfer.o [1]
+      .data          inited   0x1fff0054     0x1  uart_edma_transfer.o [1]
+                            - 0x1fff0058    0x58
+
+"P3-P4", part 2 of 2:                      0x110
+  ZI                          0x1fff0058   0x110  <Block>
+    .bss             zero     0x1fff0058     0x4  fsl_clock.o [1]
+    .bss             zero     0x1fff005c     0x4  fsl_clock.o [1]
+    .bss             zero     0x1fff0060    0x1c  fsl_debug_console.o [1]
+    .bss             zero     0x1fff007c    0x40  fsl_edma.o [1]
+    .bss             zero     0x1fff00bc    0x18  fsl_uart.o [1]
+    .bss             zero     0x1fff00d4     0x4  fsl_uart.o [1]
+    .bss             zero     0x1fff00d8    0x30  fsl_uart_edma.o [1]
+    .bss             zero     0x1fff0108    0x1c  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff0124    0x18  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff013c    0x18  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff0154     0x8  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff015c     0x8  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff0164     0x1  fsl_edma.o [1]
+    .bss             zero     0x1fff0165     0x1  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff0166     0x1  uart_edma_transfer.o [1]
+    .bss             zero     0x1fff0167     0x1  uart_edma_transfer.o [1]
+                            - 0x1fff0168   0x110
+
+"P6":                                      0x400
+  CSTACK                      0x2002fc00   0x400  <Block>
+    CSTACK           uninit   0x2002fc00   0x400  <Block tail>
+                            - 0x20030000   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x110:
+          0x1fff0058  0x110
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x58 (103% of destination):
+          0x00002c44   0x58
+    1 destination range, total size 0x55:
+          0x1fff0000   0x55
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+F:\work_backup\test\uart_edma_transfer\debug\obj: [1]
+    clock_config.o             144       28
+    fsl_assert.o                28       44
+    fsl_clock.o              1 976      132       16
+    fsl_debug_console.o        216       96       28
+    fsl_dmamux.o               108      108
+    fsl_edma.o               3 036      556       65
+    fsl_str.o                  800
+    fsl_uart.o               1 116      296       28
+    fsl_uart_edma.o          1 124      172       48
+    pin_mux.o                  104
+    serial_manager.o           204      120
+    serial_port_uart.o         100      116
+    startup_MK64F12.o        1 486
+    system_MK64F12.o            58        4        4
+    uart_adapter.o             112      120
+    uart_edma_transfer.o       680      179      168
+    ------------------------------------------------
+    Total:                  11 292    1 971      357
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                       4
+    low_level_init.o             4
+    ------------------------------------------------
+    Total:                       8
+
+m7M_tls.a: [4]
+    fpinit_M.o                  34
+    ------------------------------------------------
+    Total:                      34
+
+rt7M_tl.a: [5]
+    ABImemclr4.o                 6
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    ABImemset48.o               50
+    cexit.o                     10
+    cmain.o                     26
+    copy_init3.o                44
+    cstartup_M.o                12
+    data_init.o                 40
+    strlen.o                    54
+    zero_init3.o                64
+    ------------------------------------------------
+    Total:                     526
+
+shb_l.a: [6]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Gaps                                  6
+    Linker created                       39    1 024
+----------------------------------------------------
+    Grand Total:            11 880    2 016    1 381
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x000031fc          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00003220          --   Gb  - Linker created -
+?main                   0x00003261         Code  Gb  cmain.o [5]
+BOARD_BootClockRUN      0x00002a2b   0x46  Code  Gb  clock_config.o [1]
+BOARD_InitPins          0x000029cf   0x2a  Code  Gb  pin_mux.o [1]
+CLOCK_BootToPeeMode     0x00002229   0x4c  Code  Gb  fsl_clock.o [1]
+CLOCK_CONFIG_SetFllExtRefDiv
+                        0x00002a15   0x16  Code  Lc  clock_config.o [1]
+CLOCK_EnableClock       0x00002a95   0x16  Code  Lc  fsl_dmamux.o [1]
+CLOCK_EnableClock       0x0000042d   0x16  Code  Lc  fsl_edma.o [1]
+CLOCK_EnableClock       0x0000167d   0x16  Code  Lc  fsl_uart.o [1]
+CLOCK_EnableClock       0x0000299d   0x16  Code  Lc  pin_mux.o [1]
+CLOCK_EnablePll0        0x00002099   0x62  Code  Gb  fsl_clock.o [1]
+CLOCK_GetEr32kClkFreq   0x00001cb7   0x68  Code  Gb  fsl_clock.o [1]
+CLOCK_GetFixedFreqClkFreq
+                        0x00001f15   0x1e  Code  Gb  fsl_clock.o [1]
+CLOCK_GetFllExtRefClkFreq
+                        0x00001b9d   0x70  Code  Lc  fsl_clock.o [1]
+CLOCK_GetFllFreq        0x00001ea9   0x56  Code  Gb  fsl_clock.o [1]
+CLOCK_GetFllFreq::fllFactorTable
+                        0x00003358   0x10  Data  Lc  fsl_clock.o [1]
+CLOCK_GetFllRefClkFreq  0x00001c33   0x20  Code  Lc  fsl_clock.o [1]
+CLOCK_GetFreq           0x00001d5b   0xf0  Code  Gb  fsl_clock.o [1]
+CLOCK_GetInternalRefClkFreq
+                        0x00001eff   0x16  Code  Gb  fsl_clock.o [1]
+CLOCK_GetInternalRefClkSelectFreq
+                        0x00001c0d   0x26  Code  Lc  fsl_clock.o [1]
+CLOCK_GetMcgExtClkFreq  0x00001b27   0x76  Code  Lc  fsl_clock.o [1]
+CLOCK_GetOsc0ErClkFreq  0x00001c81   0x36  Code  Gb  fsl_clock.o [1]
+CLOCK_GetOscRangeFromFreq
+                        0x00001c5b   0x26  Code  Lc  fsl_clock.o [1]
+CLOCK_GetOutClkFreq     0x00001e65   0x44  Code  Gb  fsl_clock.o [1]
+CLOCK_GetPll0Freq       0x00001f33   0x54  Code  Gb  fsl_clock.o [1]
+CLOCK_GetPll0RefFreq    0x00001c53    0x8  Code  Lc  fsl_clock.o [1]
+CLOCK_GetPllFllSelClkFreq
+                        0x00001d1f   0x3c  Code  Gb  fsl_clock.o [1]
+CLOCK_InitOsc0          0x000020fb   0x4e  Code  Gb  fsl_clock.o [1]
+CLOCK_SetEr32kClock     0x00001ad9   0x1a  Code  Lc  fsl_clock.o [1]
+CLOCK_SetExternalRefClkConfig
+                        0x00001f87   0x54  Code  Gb  fsl_clock.o [1]
+CLOCK_SetInternalRefClkConfig
+                        0x00001fdb   0xbe  Code  Gb  fsl_clock.o [1]
+CLOCK_SetPbeMode        0x00002195   0x88  Code  Gb  fsl_clock.o [1]
+CLOCK_SetPllFllSelClock
+                        0x00001af3   0x1a  Code  Lc  fsl_clock.o [1]
+CLOCK_SetSimConfig      0x00001e4b   0x1a  Code  Gb  fsl_clock.o [1]
+CLOCK_SetSimSafeDivs    0x00002a05    0xa  Code  Lc  clock_config.o [1]
+CLOCK_SetXtal0Freq      0x00002a0f    0x6  Code  Lc  clock_config.o [1]
+CSTACK$$Base            0x2002fc00          --   Gb  - Linker created -
+CSTACK$$Limit           0x20030000          --   Gb  - Linker created -
+ConvertRadixNumToString
+                        0x0000121b   0xcc  Code  Lc  fsl_str.o [1]
+DMA0_DriverIRQHandler   0x00000ebd   0x10  Code  Gb  fsl_edma.o [1]
+DMA10_DriverIRQHandler  0x00000f5d   0x10  Code  Gb  fsl_edma.o [1]
+DMA11_DriverIRQHandler  0x00000f6d   0x10  Code  Gb  fsl_edma.o [1]
+DMA12_DriverIRQHandler  0x00000f7d   0x10  Code  Gb  fsl_edma.o [1]
+DMA13_DriverIRQHandler  0x00000f8d   0x10  Code  Gb  fsl_edma.o [1]
+DMA14_DriverIRQHandler  0x00000f9d   0x10  Code  Gb  fsl_edma.o [1]
+DMA15_DriverIRQHandler  0x00000fad   0x10  Code  Gb  fsl_edma.o [1]
+DMA1_DriverIRQHandler   0x00000ecd   0x10  Code  Gb  fsl_edma.o [1]
+DMA2_DriverIRQHandler   0x00000edd   0x10  Code  Gb  fsl_edma.o [1]
+DMA3_DriverIRQHandler   0x00000eed   0x10  Code  Gb  fsl_edma.o [1]
+DMA4_DriverIRQHandler   0x00000efd   0x10  Code  Gb  fsl_edma.o [1]
+DMA5_DriverIRQHandler   0x00000f0d   0x10  Code  Gb  fsl_edma.o [1]
+DMA6_DriverIRQHandler   0x00000f1d   0x10  Code  Gb  fsl_edma.o [1]
+DMA7_DriverIRQHandler   0x00000f2d   0x10  Code  Gb  fsl_edma.o [1]
+DMA8_DriverIRQHandler   0x00000f3d   0x10  Code  Gb  fsl_edma.o [1]
+DMA9_DriverIRQHandler   0x00000f4d   0x10  Code  Gb  fsl_edma.o [1]
+DMAMUX_EnableChannel    0x00002751   0x22  Code  Lc  uart_edma_transfer.o [1]
+DMAMUX_GetInstance      0x00002aab   0x30  Code  Lc  fsl_dmamux.o [1]
+DMAMUX_Init             0x00002adb   0x16  Code  Gb  fsl_dmamux.o [1]
+DMAMUX_SetSource        0x00002773   0x2a  Code  Lc  uart_edma_transfer.o [1]
+DbgConsole_PrintCallback
+                        0x000010bb   0x40  Code  Lc  fsl_debug_console.o [1]
+DbgConsole_Printf       0x000010fb   0x3a  Code  Gb  fsl_debug_console.o [1]
+DbgConsole_SendData     0x00001071   0x4a  Code  Gb  fsl_debug_console.o [1]
+DisableGlobalIRQ        0x0000045f    0x8  Code  Lc  fsl_edma.o [1]
+EDMA_AbortTransfer      0x00000d6d   0x3e  Code  Gb  fsl_edma.o [1]
+EDMA_CreateHandle       0x0000081f   0xd4  Code  Gb  fsl_edma.o [1]
+EDMA_GetDefaultConfig   0x000005e9   0x3a  Code  Gb  fsl_edma.o [1]
+EDMA_GetInstance        0x0000046d   0x36  Code  Lc  fsl_edma.o [1]
+EDMA_GetRemainingMajorLoopCount
+                        0x000007a1   0x66  Code  Gb  fsl_edma.o [1]
+EDMA_HandleIRQ          0x00000dab  0x108  Code  Gb  fsl_edma.o [1]
+EDMA_Init               0x00000583   0x66  Code  Gb  fsl_edma.o [1]
+EDMA_InstallTCD         0x000004a3   0xe0  Code  Gb  fsl_edma.o [1]
+EDMA_PrepareTransfer    0x00000917  0x186  Code  Gb  fsl_edma.o [1]
+EDMA_SetCallback        0x000008f3   0x24  Code  Gb  fsl_edma.o [1]
+EDMA_SetTransferConfig  0x00000623   0x64  Code  Gb  fsl_edma.o [1]
+EDMA_StartTransfer      0x00000ce9   0x7c  Code  Gb  fsl_edma.o [1]
+EDMA_SubmitTransfer     0x00000ab9  0x22a  Code  Gb  fsl_edma.o [1]
+EDMA_TcdReset           0x00000687   0x66  Code  Gb  fsl_edma.o [1]
+EDMA_TcdSetTransferConfig
+                        0x000006ed   0xb4  Code  Gb  fsl_edma.o [1]
+EnableGlobalIRQ         0x00000467    0x6  Code  Lc  fsl_edma.o [1]
+EnableIRQ               0x00000443   0x1c  Code  Lc  fsl_edma.o [1]
+EnableIRQ               0x00002735   0x1c  Code  Lc  uart_edma_transfer.o [1]
+Get_StartInstance       0x00000807   0x18  Code  Lc  fsl_edma.o [1]
+Get_StartInstance::StartInstanceNum
+                        0x1fff0164    0x1  Data  Lc  fsl_edma.o [1]
+HAL_UartSendBlocking    0x0000160d   0x5a  Code  Gb  uart_adapter.o [1]
+OSC_SetCapLoad          0x00001b1b    0xc  Code  Lc  fsl_clock.o [1]
+OSC_SetExtRefClkConfig  0x00001b0d    0xe  Code  Lc  fsl_clock.o [1]
+PORT_SetPinMux          0x000029b3   0x1c  Code  Lc  pin_mux.o [1]
+RW$$Base                0x1fff0000          --   Gb  - Linker created -
+RW$$Limit               0x1fff0058          --   Gb  - Linker created -
+Region$$Table$$Base     0x000031fc          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00003220          --   Gb  - Linker created -
+SerialManager_StartWriting
+                        0x00001149   0x32  Code  Lc  serial_manager.o [1]
+SerialManager_Write     0x0000117b   0x72  Code  Lc  serial_manager.o [1]
+SerialManager_WriteBlocking
+                        0x000011ed   0x14  Code  Gb  serial_manager.o [1]
+Serial_UartWrite        0x0000153d   0x52  Code  Gb  serial_port_uart.o [1]
+StrFormatPrintf         0x000012e7  0x254  Code  Gb  fsl_str.o [1]
+SystemCoreClock         0x1fff0008    0x4  Data  Gb  system_MK64F12.o [1]
+SystemInit              0x00003005   0x2c  Code  Gb  system_MK64F12.o [1]
+SystemInitHook          0x0000303d    0x2  Code  Wk  system_MK64F12.o [1]
+UART0_DriverIRQHandler  0x00001a11   0x14  Code  Gb  fsl_uart.o [1]
+UART0_RX_TX_DriverIRQHandler
+                        0x00001a25    0xc  Code  Gb  fsl_uart.o [1]
+UART1_RX_TX_IRQHandler  0x0000279d   0x34  Code  Gb  uart_edma_transfer.o [1]
+UART2_DriverIRQHandler  0x00001a35   0x14  Code  Gb  fsl_uart.o [1]
+UART2_RX_TX_DriverIRQHandler
+                        0x00001a49    0xc  Code  Gb  fsl_uart.o [1]
+UART3_DriverIRQHandler  0x00001a55   0x14  Code  Gb  fsl_uart.o [1]
+UART3_RX_TX_DriverIRQHandler
+                        0x00001a69    0xc  Code  Gb  fsl_uart.o [1]
+UART4_DriverIRQHandler  0x00001a75   0x14  Code  Gb  fsl_uart.o [1]
+UART4_RX_TX_DriverIRQHandler
+                        0x00001a89    0xc  Code  Gb  fsl_uart.o [1]
+UART5_DriverIRQHandler  0x00001a95   0x14  Code  Gb  fsl_uart.o [1]
+UART5_RX_TX_DriverIRQHandler
+                        0x00001acd    0xc  Code  Gb  fsl_uart.o [1]
+UART_ClearStatusFlags   0x00001983   0x4a  Code  Gb  fsl_uart.o [1]
+UART_EnableInterrupts   0x00001941   0x26  Code  Gb  fsl_uart.o [1]
+UART_EnableRxDMA        0x000022bf   0x2a  Code  Lc  fsl_uart_edma.o [1]
+UART_EnableTxDMA        0x00002295   0x2a  Code  Lc  fsl_uart_edma.o [1]
+UART_GetDataRegisterAddress
+                        0x00002291    0x4  Code  Lc  fsl_uart_edma.o [1]
+UART_GetDefaultConfig   0x000018eb   0x56  Code  Gb  fsl_uart.o [1]
+UART_GetInstance        0x00001693   0x38  Code  Gb  fsl_uart.o [1]
+UART_GetStatusFlags     0x00001967   0x1c  Code  Gb  fsl_uart.o [1]
+UART_Init               0x000016cb  0x220  Code  Gb  fsl_uart.o [1]
+UART_ReceiveEDMA        0x00002503   0xd0  Code  Gb  fsl_uart_edma.o [1]
+UART_ReceiveEDMACallback
+                        0x0000233d   0x54  Code  Lc  fsl_uart_edma.o [1]
+UART_SendEDMA           0x0000243d   0xc6  Code  Gb  fsl_uart_edma.o [1]
+UART_SendEDMACallback   0x000022e9   0x54  Code  Lc  fsl_uart_edma.o [1]
+UART_TransferAbortReceiveEDMA
+                        0x00002617   0x44  Code  Gb  fsl_uart_edma.o [1]
+UART_TransferAbortSendEDMA
+                        0x000025d3   0x44  Code  Gb  fsl_uart_edma.o [1]
+UART_TransferCreateHandleEDMA
+                        0x000023a3   0x9a  Code  Gb  fsl_uart_edma.o [1]
+UART_TransferGetReceiveCountEDMA
+                        0x0000265b   0x6a  Code  Gb  fsl_uart_edma.o [1]
+UART_UserCallback       0x000027d1   0x2e  Code  Gb  uart_edma_transfer.o [1]
+UART_WriteBlocking      0x000019cd   0x18  Code  Gb  fsl_uart.o [1]
+ZI$$Base                0x1fff0058          --   Gb  - Linker created -
+ZI$$Limit               0x1fff0168          --   Gb  - Linker created -
+__NVIC_EnableIRQ        0x00000411   0x1c  Code  Lc  fsl_edma.o [1]
+__NVIC_EnableIRQ        0x000026f5   0x1a  Code  Lc  uart_edma_transfer.o [1]
+__NVIC_SetPriority      0x0000270f   0x26  Code  Lc  uart_edma_transfer.o [1]
+__Vectors               0x00000000          --   Gb  startup_MK64F12.o [1]
+__Vectors_End           0x00000400         Data  Gb  startup_MK64F12.o [1]
+__Vectors_Size {Abs}    0x00000400          --   Gb  startup_MK64F12.o [1]
+__aeabi_assert          0x00000fed   0x1c  Code  Gb  fsl_assert.o [1]
+__aeabi_memclr4         0x00001215         Code  Gb  ABImemclr4.o [5]
+__aeabi_memset          0x00001009         Code  Gb  ABImemset.o [5]
+__cmain                 0x00003261         Code  Gb  cmain.o [5]
+__exit                  0x00003291   0x14  Code  Gb  exit.o [6]
+__iar_Memset            0x00001009         Code  Gb  ABImemset.o [5]
+__iar_Memset4_word      0x000015a1         Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x000015a1         Code  Gb  ABImemset48.o [5]
+__iar_Memset_word       0x00001011         Code  Gb  ABImemset.o [5]
+__iar_copy_init3        0x000030c5   0x2c  Code  Gb  copy_init3.o [5]
+__iar_data_init3        0x00003169   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x000031d9         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x00003429         Code  Gb  cstartup_M.o [5]
+__iar_unaligned___aeabi_memcpy
+                        0x00002b01         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy4
+                        0x00002b21         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                        0x00002b21         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_zero_init3        0x00002e99   0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000327b    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000         Data  Gb  startup_MK64F12.o [1]
+__vector_table_0x1c     0x0000001c         Data  Gb  startup_MK64F12.o [1]
+_call_main              0x0000326d         Code  Gb  cmain.o [5]
+_exit                   0x00003285         Code  Gb  cexit.o [5]
+_main                   0x00003277         Code  Gb  cmain.o [5]
+exit                    0x0000327f    0x4  Code  Gb  exit.o [3]
+g_rxBuffer              0x1fff015c    0x8  Data  Gb  uart_edma_transfer.o [1]
+g_tipString             0x1fff000c   0x48  Data  Gb  uart_edma_transfer.o [1]
+g_txBuffer              0x1fff0154    0x8  Data  Gb  uart_edma_transfer.o [1]
+g_uartEdmaHandle        0x1fff0108   0x1c  Data  Gb  uart_edma_transfer.o [1]
+g_uartRxEdmaHandle      0x1fff013c   0x18  Data  Gb  uart_edma_transfer.o [1]
+g_uartTxEdmaHandle      0x1fff0124   0x18  Data  Gb  uart_edma_transfer.o [1]
+g_xtal0Freq             0x1fff0058    0x4  Data  Gb  fsl_clock.o [1]
+g_xtal32Freq            0x1fff005c    0x4  Data  Gb  fsl_clock.o [1]
+main                    0x000027ff  0x14e  Code  Gb  uart_edma_transfer.o [1]
+mcgConfig_BOARD_BootClockRUN
+                        0x000033c8    0xc  Data  Gb  clock_config.o [1]
+oscConfig_BOARD_BootClockRUN
+                        0x0000343c    0x8  Data  Gb  clock_config.o [1]
+receivecomplete         0x00002391   0x12  Code  Gb  fsl_uart_edma.o [1]
+rxBufferEmpty           0x1fff0054    0x1  Data  Gb  uart_edma_transfer.o [1]
+rxOnGoing               0x1fff0167    0x1  Data  Gb  uart_edma_transfer.o [1]
+s_EDMAHandle            0x1fff007c   0x40  Data  Lc  fsl_edma.o [1]
+s_UartAdapterBase       0x0000331c   0x18  Data  Lc  uart_adapter.o [1]
+s_debugConsoleState     0x1fff0060   0x1c  Data  Lc  fsl_debug_console.o [1]
+s_dmamuxBases           0x00003634    0x4  Data  Lc  fsl_dmamux.o [1]
+s_dmamuxClockName       0x00003638    0x4  Data  Lc  fsl_dmamux.o [1]
+s_edmaBases             0x0000363c    0x4  Data  Lc  fsl_edma.o [1]
+s_edmaClockName         0x00003640    0x4  Data  Lc  fsl_edma.o [1]
+s_edmaIRQNumber         0x00003398   0x10  Data  Lc  fsl_edma.o [1]
+s_edmaPrivateHandle     0x1fff00d8   0x30  Data  Lc  fsl_uart_edma.o [1]
+s_fastIrcFreq           0x1fff0004    0x4  Data  Lc  fsl_clock.o [1]
+s_slowIrcFreq           0x1fff0000    0x4  Data  Lc  fsl_clock.o [1]
+s_uartBases             0x000032bc   0x18  Data  Lc  fsl_uart.o [1]
+s_uartClock             0x000032d4   0x18  Data  Lc  fsl_uart.o [1]
+s_uartHandle            0x1fff00bc   0x18  Data  Lc  fsl_uart.o [1]
+s_uartIsr               0x1fff00d4    0x4  Data  Lc  fsl_uart.o [1]
+simConfig_BOARD_BootClockRUN
+                        0x00003434    0x8  Data  Gb  clock_config.o [1]
+strlen                  0x000015d5         Code  Gb  strlen.o [5]
+txBufferFull            0x1fff0165    0x1  Data  Gb  uart_edma_transfer.o [1]
+txOnGoing               0x1fff0166    0x1  Data  Gb  uart_edma_transfer.o [1]
+
+
+[1] = F:\work_backup\test\uart_edma_transfer\debug\obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  11 880 bytes of readonly  code memory
+   2 016 bytes of readonly  data memory
+   1 381 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,15 @@
+"E:\IAR7\arm\bin\armproc.dll" 
+
+"E:\IAR7\arm\bin\armjlink2.dll" 
+
+"F:\work_backup\test\uart_edma_transfer\debug\uart_edma_transfer.out" 
+
+--plugin "E:\IAR7\arm\bin\armbat.dll" 
+
+--device_macro "E:\IAR7\arm\config\debugger\NXP\K6x.dmac" 
+
+--flash_loader "E:\IAR7\arm\config\flashloader\NXP\FlashK64Fxxx128K.board" 
+
+
+
+
